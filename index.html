@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<!-- <link rel="stylesheet" href="dist/theme/black.css" id="theme"> -->
+		<link rel="stylesheet" href="dist/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 class="title is-1">デザイン編</h1>
+					<figure><img src="../images/bulmabuefy.png"></figure>
+				</section>
+
+				<section>
+					<figure class="has-text-left"><a href="https://bulma.io/" target="_blank"><img src="../images/bulmalogot.png"></a></figure>
+					<div class="is-size-3" style="text-align: left;">
+						<p>
+							<div class="block">
+								<li>FlexboxをベースにしたCSSフレームワーク</li>
+							</div>
+							<div class="block">
+								<li>CSSのみ</li>
+								<li>Vue.js、react、jQueryなどと自由に組み合わせ可能</li>
+								<li>シンプルで学習コストが低い</li>
+							</div>
+							<div class="block">
+								<li>多くのクラスが定義されている</li>
+								<li>クラス指定で、色・サイズ・位置など変更可能</li>
+								<li>カスタマイズ可能</li>
+							</div>
+						</p>
+					</div>
+				</section>
+
+				<section>
+					<figure class="has-text-left"><a href="https://buefy.org/" target="_blank"><img src="../images/buefy.png"></a></figure>
+					<div class="is-size-3" style="text-align: left;">
+						<p>
+							<div class="block">
+								<li>UIコンポーネントライブラリ</li>
+							</div>
+							<div class="block">
+								<li>動き　　：Vue.js</li>
+								<li>デザイン：Bulma</li>
+							</div>
+							<div class="block">
+								<li>Buefy独自のUIコンポーネントあり</li>
+								<li>スクリプトも記載されている</li>
+							</div>
+						</p>
+					</div>
+				</section>
+				
+				<section>
+					<figure><img src="../images/menu.png"></figure>
+				</section>
+
+				<section>
+					<div class="title is-2 has-text-left has-text-link">Bulma/Buefyの使い方</div>
+					<div class="is-size-3" style="text-align: left;">
+						<div class="block">
+							<li>従来のCSS使用時と同様に、必要なclass属性を指定する</li>
+							<li>「is-」、「has-」クラスがデフォルトで定義されている</li>
+							例）is-primary、is-large、is-outlined、has-text-centered
+						</div>
+						<div class="block">
+							<li>公式ドキュメントに使えるクラスが書いてある</li>
+							<li>ひとまず公式サイトからコピペするだけ</li>
+							<li>クラスが一覧でまとめられているサイト → <a  target="_blank" href="https://bulma.dev/classes">1</a>、<a  target="_blank" href="https://qiita.com/chromia/items/5ee272a69eb27d839c91">2</a></li>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<section>
+						<div class="title is-2 has-text-left has-text-link">ボタンの例</div>
+						<div class="columns is-vcentered">
+							<div class="column is-10">
+								<pre><code data-trim>
+									<button type="button">ふつうのボタン</button>
+								</code></pre>
+							</div>
+							<div class="column">
+								<button type="button">ふつうのボタン</button>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<div class="title is-2 has-text-left has-text-link">ボタンの例</div>
+						<div class="columns">
+							<div class="column is-10">
+								<pre><code data-trim>
+									<button type="button">ふつうのボタン</button>
+									<div class="button">ボタン１</div>
+									<div class="button is-primary">ボタン２</div>
+									<div class="button is-primary is-outlined">ボタン３</div>
+									<div class="button is-danger is-large">ボタン４</div>
+								</code></pre>
+							</div>
+							<div class="column">
+								<button type="button">ふつうのボタン</button>
+								<div class="button">ボタン１</div>
+								<div class="button is-primary">ボタン２</div>
+								<div class="button is-primary is-outlined">ボタン３</div>
+								<div class="button is-danger is-large">ボタン４</div>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<div class="title is-2 has-text-left has-text-link">従来のスタイル記述との比較</div>
+					<div class="button is-primary is-large">button1</div>
+					<div class="columns">
+						<div class="column is-size-3">
+							<pre><code data-trim>
+								<center>
+									<button type="button" name="aaa" value="aaa" 
+										style="background-color: #00d1b2; 
+												border:2px solid #00d1b2; 
+												color: white; 
+												width: 134.55px; 
+												height: 60px; 
+												border-radius: 5px;">
+										<font size="5">button1</font>
+									</button>
+								</center>
+							</code></pre>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column is-size-3">
+							<pre><code data-trim>
+								<div class="buttons is-centered">
+									<button class="button is-primary is-large">button1</button>
+								</div>
+							</code></pre>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="title is-2 has-text-left has-text-link">Sass(SCSS)でのカスタマイズ</div>
+					<div class="is-size-3" style="text-align: left;">
+						<div class="block">
+							<li>BulmaのCSS情報は「bulma/sass/utilities._all」に書いてある</li>
+							<li>カスタムスタイルは、新規のScssファイルを作成</li>	
+							<li>作成したScssファイルをVueファイルにインポートする</li>
+							<li>例）デフォルトの色を変えたい</li>
+						</div>
+						<a target="_blank" href="https://buefy.org/documentation/customization">公式Doc</a>
+					</div>
+				</section>
+				
+				<section>
+					<div class="title is-2 has-text-left has-text-link">Buefy(Bulma)を使うまでの準備</div>
+					<div class="content is-size-3">
+						<ol type="1">
+						  <li>Node.jsのインストール</li>
+						  <li>Vue cliのインストール</li>
+						  <li>Vueプロジェクトの作成</li>
+						  <li>Buefyのインストール</li>
+						  <li>FontAwsomeのインストール  ※アイコン用</li><br>
+						  <a target="_blank" href="http://41-kbs042.kenko.rsoa.ryobi.co.jp/gitbucket/r28783/bulma_memo/blob/master/%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89memo.md">詳細はこちら</a>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<div class="title is-2 has-text-left has-text-link">少ないコードで楽にモダンなデザインを！</div>
+				</section>
+			</div>
+		</div>
+		
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/zoom/zoom.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes,RevealZoom ]
+			});
+		</script>
+	</body>
+</html>
